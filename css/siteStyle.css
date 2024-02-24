@@ -12,9 +12,20 @@ h1{
 h2{
     font-size: 2em;
 }
+
 header{
     background-color: #3A015C;
     display:flex;
+    padding:10px;
+    align-items:flex-end;
+}
+header h1{
+    color:#f8f8f8;
+    margin:0;
+    display:inline;
+}
+header img{
+    display:inline;
 }
 header ul{
     display:flex;
@@ -23,6 +34,15 @@ header ul{
     list-style: none;
 }
 header li{padding: 0px 10px;}
-header li a{
+header li a {
     transition: all .25s linear;
+}
+.malicious, .malicious:hover{
+    color:#ff0000;
+}
+.unSure, .unSure:hover{
+    color: #9c9c15;
+}
+.safe, .safe:hover{
+    color:#228B22;
 }
