@@ -152,8 +152,14 @@ main{
     text-align: justify;
     font-size: 1.5em
 }
+
 .DemoPageDiv p{
     width: 80%;
+}
+
+.DemoPageDiv a{
+    text-decoration-line: underline;
+    font-weight: bolder;
 }
 
 figure img{
