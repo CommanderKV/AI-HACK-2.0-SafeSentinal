@@ -92,12 +92,15 @@ def process_csv(filename):
             
             else:
                 print("[REMOVING]", url, "from the dataset.")
-                with open("malicious_phish.csv", 'r') as f:
+                temp_lines = []
+                with open("malicious_phish.csv", 'r', ) as f:
                     lines = csv.reader(f)
-                    lines = [line for line in lines if line != row]
+                    for line in lines:
+                        if line != row:
+                            temp_lines.append(line)
                 with open("malicious_phish.csv", 'w', newline='') as f:
                     writer = csv.writer(f)
-                    writer.writerows(lines)
+                    writer.writerows(temp_lines)
                 
     return website_content
 
