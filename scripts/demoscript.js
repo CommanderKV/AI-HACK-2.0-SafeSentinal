@@ -31,12 +31,11 @@ allLinks.forEach(link => {
     if(checkContainsWebsite(link.href, siteWebsite)){
         link.style.color = 'white';
     }
-    if (checkContainsWebsite(link.href, goodWebsites)) {
+    else if (checkContainsWebsite(link.href, goodWebsites)) {
         link.style.color = 'green';
     } else if (checkContainsWebsite(link.href, badWebsites)) {
         link.style.color = 'red';
-    }
-    else{
+    } else{
         link.style.color = 'khaki;';
     }
 });
