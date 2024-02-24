@@ -3,14 +3,17 @@
 const goodWebsites = new Set([
     'example.com',
     'stackoverflow.com',
-    'google.com'
+    'google.com',
+    'lakeheadgeorgian.ca',
+    'merriam-webster.com'
 ]);
 
 const badWebsites = new Set([
-    'malicious.com'
+    'crohasit.net'
 ]);
 const siteWebsite=new Set([
-    'commanderkv.github.io/AI-HACK-2.0-SafeSentinal/'
+    'commanderkv.github.io/AI-HACK-2.0-SafeSentinal/',
+    'localhost'
 ])
 
 // Function to check if a URL contains part of a website's URL
@@ -40,7 +43,7 @@ allLinks.forEach(link => {
     } else if (checkContainsWebsite(link.href, badWebsites)) {
         link.style.color = 'red';
     } else{
-        link.style.color = 'khaki';
+        link.style.color = '#dcb124';
     }
 });
 
