@@ -8,9 +8,13 @@ h1{
     font-family: Calibri, Arial, Cambria, sans-serif;
     font-size: 2.5em;
     font-weight: bold;
+    padding:0;
+    margin:0;
 }
 h2{
     font-size: 2em;
+    padding:0;
+    margin:2%;
 }
 
 header{
@@ -36,6 +40,13 @@ header ul{
 header li{padding: 0px 10px;}
 header li a {
     transition: all .25s linear;
+}
+#masthead{
+    text-align: center;
+    background-color: #13A18F;
+    display:flex;
+    flex-direction:column;
+    padding:2%
 }
 .malicious, .malicious:hover{
     color:#ff0000;
