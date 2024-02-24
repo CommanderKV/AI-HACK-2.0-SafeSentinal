@@ -61,7 +61,7 @@ function handleLinkClick(event) {
         confirmed=true;
     }
     else{
-        confirmed = window.confirm('We are unable to guarantee the contents of this site. Proceed with caution' + link.href + '?');
+        confirmed = window.confirm('We are unable to guarantee the contents of this site. Proceed with caution to: ' + link.href + '?');
     }
 
     if (!confirmed) {
