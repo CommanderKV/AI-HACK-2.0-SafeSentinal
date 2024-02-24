@@ -105,20 +105,3 @@ figure img{
     width: 100%;
     height: auto;
 }
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-nav ul li {
-    margin-left: 10px;
-}
-nav ul li:first-child {
-    margin-left: 0;
-}
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-}
