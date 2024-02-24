@@ -48,11 +48,14 @@ def write_to_csv(data, filename):
 
 def process_csv(filename):
     website_content = []
+    counter = 0
 
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         next(reader)  # Skip header row
         for row in reader:
+            if (counter >= 200):
+                break;
             url = row[0]
 
             # Add missing elements of the URL
@@ -83,6 +86,7 @@ def process_csv(filename):
             if content and threat != -1:
                 website_content.append((url, content, threat))
                 print("[ADDED]", url, "to the dataset.")
+                counter += 1
             
             else:
                 print("[REMOVING]", url, "from the dataset.")
