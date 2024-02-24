@@ -93,7 +93,7 @@ def process_csv(filename):
             else:
                 print("[REMOVING]", url, "from the dataset.")
                 temp_lines = []
-                with open("malicious_phish.csv", 'r', ) as f:
+                with open("malicious_phish.csv", 'r') as f:
                     lines = csv.reader(f)
                     for line in lines:
                         if line != row:
