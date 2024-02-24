@@ -76,7 +76,7 @@ def process_csv(filename):
                 type_category = row[1]
             except:
                 print("Failed to fetch type for", url, "|", row)
-                return
+                return None
             
             print("[CONNECTION] Fetching", url, "...")
 
@@ -110,7 +110,8 @@ def process_csv(filename):
 
 def main():
     classified_websites = process_csv('malicious_phish.csv')
-    write_to_csv(classified_websites, 'classified_websites.csv')
+    if classified_websites:
+        write_to_csv(classified_websites, 'classified_websites.csv')
 
 if __name__ == '__main__':
     #print((fetch_website_content('https://www.google.com')))
