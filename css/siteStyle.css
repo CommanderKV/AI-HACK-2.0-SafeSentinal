@@ -32,11 +32,11 @@ header img{
 }
 header ul{
     display:flex;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
-header li{padding: 0px 10px;}
+header li{padding: 0 10px;}
 header li a {
     color:white;
 }
@@ -137,6 +137,8 @@ figure img{
 
 .valueProp{
     display: flex;
-    flex-direction: column;
-    column-count: 2;
+    flex-wrap: wrap;
+}
+.valueColumn{
+
 }

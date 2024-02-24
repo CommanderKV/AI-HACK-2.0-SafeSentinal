@@ -3,13 +3,15 @@
 const goodWebsites = new Set([
     'example.com',
     'stackoverflow.com',
-    'google.com',
-    'commanderkv.github.io/AI-HACK-2.0-SafeSentinal/'
+    'google.com'
 ]);
 
 const badWebsites = new Set([
     'malicious.com'
 ]);
+const siteWebsite=new Set([
+    'commanderkv.github.io/AI-HACK-2.0-SafeSentinal/'
+])
 
 // Function to check if a URL contains part of a website's URL
 function checkContainsWebsite(url, websitesSet) {
@@ -26,6 +28,9 @@ const allLinks = document.querySelectorAll('a');
 
 // Iterate through each link and apply color based on good or bad website
 allLinks.forEach(link => {
+    if(checkContainsWebsite(link.href, siteWebsite)){
+        link.style.color = 'white';
+    }
     if (checkContainsWebsite(link.href, goodWebsites)) {
         link.style.color = 'green';
     } else if (checkContainsWebsite(link.href, badWebsites)) {
