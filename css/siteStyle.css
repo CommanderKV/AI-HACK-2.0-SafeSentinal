@@ -17,7 +17,7 @@ h2{
 }
 
 header{
-    background-color: #544578;
+    background-color: #3A015C;
     display:flex;
     padding:10px;
     align-items:flex-end;
@@ -55,7 +55,7 @@ a:hover{
     padding:2%
 }
 footer{
-    background-color:#544578;
+    background-color:#3A015C;
     color:white;
     display:flex;
     width:100%;
@@ -85,6 +85,9 @@ footer a{
 }
 .safe, .safe:hover{
     color:#228B22;
+}
+main{
+    margin:2%;
 }
 .AboutPageDiv{
     align-items:center;
@@ -117,4 +120,18 @@ footer a{
 figure img{
     width: 100%;
     height: auto;
+}
+
+#Demo{
+    border-color: black;
+    border-radius: 15px;
+    border-width: 3px;
+    padding: 35px 35px;
+    background-image: url("img/Demo_Link_Background-image.jpg");
+    transition: all 0.25s ease-in-out;
+    backdrop-filter: grayscale(100%);
+    color: white;
+}
+#Demo:hover{
+    backdrop-filter: grayscale(0%);
 }
