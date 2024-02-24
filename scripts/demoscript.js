@@ -56,12 +56,12 @@ function handleLinkClick(event) {
         confirmed=true;
     }
     else if (checkContainsWebsite(link.href, badWebsites)) {
-        confirmed = window.confirm('This website is potentially malicious. We DO NOT recoment you visiting this website: ' + link.href );
+        confirmed = window.confirm('This website is potentially malicious. It is not recommended to visit. Proceed at your own risk: ' + link.href );
     }else if(checkContainsWebsite(link.href, siteWebsite)){
         confirmed=true;
     }
     else{
-        confirmed = window.confirm('This website is not in our list. Are you sure you want to visit ' + link.href + '?');
+        confirmed = window.confirm('We are unable to guarantee the contents of this site. Proceed with caution' + link.href + '?');
     }
 
     if (!confirmed) {

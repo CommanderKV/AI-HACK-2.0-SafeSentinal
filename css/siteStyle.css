@@ -12,9 +12,9 @@ h1{
     margin:0;
 }
 h2{
-    font-size: 1em;
+    font-size: 1.6em;
     padding:0;
-    margin:2%;
+    margin:10px;
 }
 /*
 header{
@@ -157,7 +157,7 @@ main{
 }
 
 figure img{
-    width: 100%;
+    width: 900px;
     height: auto;
 }
 
@@ -175,7 +175,36 @@ figure img{
     width: 80%
 }
 
-.DemoPageDiv a{
-    font-weight: bold;
-    text-decoration-line: underline;
+.AboutPageDiv{
+    float: right;
+    width: 50%; /* Adjust the width as needed */
+    /* You may need to adjust padding, margin, or box-sizing for spacing */
+    box-sizing: border-box;
+}
+.bmcDiv{
+    float: left;
+    width: 50%; /* Adjust the width as needed */
+    /* You may need to adjust padding, margin, or box-sizing for spacing */
+    box-sizing: border-box;
+    margin-left: -5%;
+}
+
+#callToAction a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+#callToAction img{
+
+    background-color: #13A18F;
+    border-radius: 15px;
+    transition: all .25s ease ;
+    width: 50%;
+    height: auto;
+}
+#callToAction img:hover{
+    background-color: #06D6A0;
 }
