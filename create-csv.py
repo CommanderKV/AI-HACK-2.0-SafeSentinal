@@ -29,7 +29,7 @@ def fetch_website_content(url):
 
 def classify_website(url, type_category):
     safeCategories = ["benign", "safe"]
-    suspiciousCategories = ['defacement']
+    suspiciousCategories = ['defacement', "unsure"]
     unsafeCategories = ["malware", "phishing"]
     if type_category in safeCategories:
         return 0
@@ -76,7 +76,7 @@ def process_csv(filename):
                 type_category = row[1]
             except:
                 print("Failed to fetch type for", url, "|", row)
-                return None
+                type_category = "unsure"
             
             print("[CONNECTION] Fetching", url, "...")
 
