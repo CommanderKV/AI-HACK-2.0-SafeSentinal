@@ -40,7 +40,7 @@ allLinks.forEach(link => {
     } else if (checkContainsWebsite(link.href, badWebsites)) {
         link.style.color = 'red';
     } else{
-        link.style.color = 'khaki;';
+        link.style.color = 'khaki';
     }
 });
 
