@@ -157,7 +157,7 @@ main{
 }
 
 figure img{
-    width: 100%;
+    width: 900px;
     height: auto;
 }
 
@@ -175,9 +175,18 @@ figure img{
     width: 80%
 }
 
-.DemoPageDiv a{
-    font-weight: bold;
-    text-decoration-line: underline;
+.AboutPageDiv{
+    float: right;
+    width: 50%; /* Adjust the width as needed */
+    /* You may need to adjust padding, margin, or box-sizing for spacing */
+    box-sizing: border-box;
+}
+.bmcDiv{
+    float: left;
+    width: 50%; /* Adjust the width as needed */
+    /* You may need to adjust padding, margin, or box-sizing for spacing */
+    box-sizing: border-box;
+    margin-left: -5%;
 }
 
 #callToAction a{
