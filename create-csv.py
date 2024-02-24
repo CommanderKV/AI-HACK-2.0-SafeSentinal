@@ -58,51 +58,57 @@ def process_csv(filename):
 
     with open(filename, 'r') as file:
         reader = csv.reader(file)
-        next(reader)  # Skip header row
-        for row in reader:
-            lines.append(row)
-            if (counter >= 10000):
-                break
-            try:
-                url = row[0]
-            except:
-                print("\033[91m" + "Failed to fetch type for", row + "\033[30m")
-                type_category = "unsure"
-                url = ""
-
-            # Add missing elements of the URL
-            if ("www." not in url[:15] and "http" not in url[:15] and url != ""):
-                url = "www." + url
-
-            if ("http" not in url and url != ""):
-                url = "https://" + url
-            
-            try:
-                type_category = row[1]
-            except:
-                print("\033[91m" + "Failed to fetch type for", url, "|", row + "\033[30m")
-                type_category = "unsure"
-            
-            print("[CONNECTION] Fetching", url, "...")
-
-            # Try to get the website content
-            try:
-                content = fetch_website_content(url)
-            except:
-                print("Failed to fetch", url, "with https. Trying http...")
+        next(reader) 
+        rowCount = 0
+        try: # Skip header row
+            for row in reader:
+                rowCount += 1
+                lines.append(row)
+                if (counter >= 10000):
+                    break
                 try:
-                    url = url.replace("https", "http")
+                    url = row[0]
+                except:
+                    print("\033[91m" + "Failed to fetch type for", row + "\033[30m")
+                    type_category = "unsure"
+                    url = ""
+
+                # Add missing elements of the URL
+                if ("www." not in url[:15] and "http" not in url[:15] and url != ""):
+                    url = "www." + url
+
+                if ("http" not in url and url != ""):
+                    url = "https://" + url
+                
+                try:
+                    type_category = row[1]
+                except:
+                    print("\033[91m" + "Failed to fetch type for", url, "|", row + "\033[30m")
+                    type_category = "unsure"
+                
+                print("[CONNECTION] Fetching", url, "...")
+
+                # Try to get the website content
+                try:
                     content = fetch_website_content(url)
                 except:
-                    print("[NOTICE] Failed to fetch", url)
-                    content = None
+                    print("Failed to fetch", url, "with https. Trying http...")
+                    try:
+                        url = url.replace("https", "http")
+                        content = fetch_website_content(url)
+                    except:
+                        print("[NOTICE] Failed to fetch", url)
+                        content = None
 
-            # Classify the website
-            threat = classify_website(url, type_category)
-            if content and threat != -1:
-                website_content.append((url, content, threat))
-                print("[ADDED]", url, "to the dataset.")
-                counter += 1
+                # Classify the website
+                threat = classify_website(url, type_category)
+                if content and threat != -1:
+                    website_content.append((url, content, threat))
+                    print("[ADDED]", url, "to the dataset.")
+                    counter += 1
+        except:
+            print("[FAILURE] Failed to go to next row on row", rowCount)
+            return website_content
 
                 
     return website_content
