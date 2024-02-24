@@ -54,13 +54,11 @@ function handleLinkClick(event) {
 
     if (checkContainsWebsite(link.href, goodWebsites)) {
         confirmed=true;
-    }
-    else if (checkContainsWebsite(link.href, badWebsites)) {
+    }else if (checkContainsWebsite(link.href, badWebsites)) {
         confirmed = window.confirm('This website is potentially malicious. It is not recommended to visit. Proceed at your own risk: ' + link.href );
     }else if(checkContainsWebsite(link.href, siteWebsite)){
         confirmed=true;
-    }
-    else{
+    }else{
         confirmed = window.confirm('We are unable to guarantee the contents of this site. Proceed with caution to: ' + link.href + '?');
     }
 
