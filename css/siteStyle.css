@@ -137,3 +137,9 @@ figure img{
 .HomePage p{
     width: 80%
 }
+
+.valueProp{
+    display: flex;
+    flex-direction: column;
+    column-count: 2;
+}
