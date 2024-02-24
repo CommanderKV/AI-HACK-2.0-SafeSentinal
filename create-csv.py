@@ -56,7 +56,7 @@ def process_csv(filename):
         next(reader)  # Skip header row
         for row in reader:
             lines.append(row)
-            if (counter >= 200):
+            if (counter >= 100):
                 break
             url = row[0]
 
@@ -95,7 +95,7 @@ def process_csv(filename):
                 with open("malicious_phish.csv", 'w', newline='') as f:
                     writer = csv.writer(f)
                     writer.writerows(lines)
-                    
+
                 
     return website_content
 
