@@ -11,7 +11,7 @@ h1{
     margin:0;
 }
 h2{
-    font-size: 2em;
+    font-size: 1em;
     padding:0;
     margin:2%;
 }
@@ -58,7 +58,6 @@ footer{
     background-color:#3A015C;
     color:white;
     display:flex;
-    position:absolute;
     width:100%;
     bottom:0;
 }
@@ -99,4 +98,27 @@ footer a{
 
 .AboutPageDiv p {
     width: 80%;
+}
+
+/*David's css is here*/
+figure img{
+    width: 100%;
+    height: auto;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin-left: 10px;
+}
+nav ul li:first-child {
+    margin-left: 0;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
 }
