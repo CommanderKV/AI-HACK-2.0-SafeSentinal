@@ -56,7 +56,7 @@ def process_csv(filename):
             url = row[0]
 
             # Add missing elements of the URL
-            if "www." not in url[:15]:
+            if "www." not in url[:15] and "http" not in url[:15]:
                 url = "www." + url
 
             if ("http" not in url):
