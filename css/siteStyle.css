@@ -89,6 +89,9 @@ footer a{
 main{
     margin:2%;
 }
+main a{
+    color:khaki;
+}
 .AboutPageDiv{
     align-items:center;
     justify-content: center;
