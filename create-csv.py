@@ -90,8 +90,8 @@ def process_csv(filename):
             
             else:
                 print("[REMOVING]", url, "from the dataset.")
-                with open("malicious_phish.csv", 'r') as f:
-                    readCSV = csv.reader(f)
+                with open("malicious_phish.csv", 'r',) as f:
+                    readCSV = csv.reader(f, delimiter=',')
                     lines = list(readCSV)
                 
                 lines.index(row)
