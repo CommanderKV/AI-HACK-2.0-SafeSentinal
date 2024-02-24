@@ -119,7 +119,7 @@ footer a{
     color:#ff0000;
 }
 .unSure, .unSure:hover{
-    color: #9c9c15;
+    color: #dc9224;
 }
 .safe, .safe:hover{
     color:#228B22;
@@ -172,4 +172,9 @@ figure img{
 }
 .HomePage p{
     width: 80%
+}
+
+.DemoPageDiv a{
+    font-weight: bold;
+    text-decoration-line: underline;
 }
