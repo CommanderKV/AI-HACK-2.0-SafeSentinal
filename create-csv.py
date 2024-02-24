@@ -1,5 +1,4 @@
 import csv
-import time
 import requests
 import concurrent.futures
 
@@ -57,7 +56,7 @@ def process_csv(filename):
             url = row[0]
 
             # Add missing elements of the URL
-            if "www." not in url[:10]:
+            if "www." not in url[:15]:
                 url = "www." + url
 
             if ("http" not in url):
@@ -84,9 +83,7 @@ def process_csv(filename):
             if content and threat != -1:
                 website_content.append((url, content, threat))
                 print("[ADDED]", url, "to the dataset.")
-            
-            time.sleep(.2)
-    
+                
     return website_content
 
 def main():
