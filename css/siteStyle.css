@@ -1,6 +1,5 @@
 html{
     font-family: Calibri, Arial, Cambria, sans-serif;
-    text-decoration: none;
     margin:0;
     padding: 0;
 }
@@ -39,7 +38,14 @@ header ul{
 }
 header li{padding: 0px 10px;}
 header li a {
+    color:white;
+}
+a{
+    text-decoration:none;
     transition: all .25s linear;
+}
+a:hover{
+    color: #06D6A0;
 }
 #masthead{
     text-align: center;
@@ -48,6 +54,7 @@ header li a {
     flex-direction:column;
     padding:2%
 }
+
 .malicious, .malicious:hover{
     color:#ff0000;
 }
