@@ -1,14 +1,25 @@
 import csv
 import time
 import requests
-import asyncio
+import concurrent.futures
 
 def fetch_website_content(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.text
-    else:
-        return None
+    def run(url):
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.text
+        else:
+            return None
+    
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future = executor.submit(run, url)
+        try:
+            result = future.result(timeout=10)
+        except:
+            print("[TIMEOUT]Failed to fetch", url, "within 10 seconds.")
+            result = None
+
+        return result
 
 def classify_website(url, type_category):
     safeCategories = ["benign", "safe"]
@@ -57,7 +68,7 @@ def process_csv(filename):
                 print("Failed to fetch", url, "with https. Trying http...")
                 try:
                     url = url.replace("https", "http")
-                    content = asyncio.run(fetch_website_content(url))
+                    content = fetch_website_content(url)
                 except:
                     print("Failed to fetch", url)
                     content = None
