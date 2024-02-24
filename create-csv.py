@@ -94,7 +94,7 @@ def process_csv(filename):
                 print("[REMOVING]", url, "from the dataset.")
                 with open("malicious_phish.csv", 'r') as f:
                     lines = f.readlines()
-                    lines = [line for line in lines]
+                    lines = [line for line in lines if line != row]
                 with open("malicious_phish.csv", 'w', newline='') as f:
                     writer = csv.writer(f)
                     writer.writerows(lines)
