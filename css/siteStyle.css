@@ -12,9 +12,17 @@ h1{
 h2{
     font-size: 2em;
 }
-
-main{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 50%;
+header{
+    background-color: #3A015C;
+    display:flex;
+}
+header ul{
+    display:flex;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+header li{padding: 0px 10px;}
+header li a{
+    transition: all .25s linear;
 }
