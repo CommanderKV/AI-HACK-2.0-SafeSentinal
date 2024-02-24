@@ -61,7 +61,7 @@ def process_csv(filename):
         next(reader)  # Skip header row
         for row in reader:
             lines.append(row)
-            if (counter >= 1000):
+            if (counter >= 10000):
                 break
             url = row[0]
 
@@ -89,7 +89,7 @@ def process_csv(filename):
                     url = url.replace("https", "http")
                     content = fetch_website_content(url)
                 except:
-                    print("Failed to fetch", url)
+                    print("\033[91m[NOTICE] Failed to fetch", url, "\033[30m")
                     content = None
 
             # Classify the website
