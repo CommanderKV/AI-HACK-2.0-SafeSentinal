@@ -48,7 +48,7 @@ def write_to_csv(data, filename):
 
 def process_csv(filename):
     website_content = []
-    lines = ["url", "type"]
+    lines = [["url", "type"]]
     counter = 0
 
     with open(filename, 'r') as file:
