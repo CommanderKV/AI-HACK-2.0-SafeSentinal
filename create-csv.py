@@ -13,7 +13,7 @@ def fetch_website_content(url):
             return None
         
         if response.status_code == 200:
-            return response.text
+            return str(response.content)
         else:
             return None
     
