@@ -66,21 +66,21 @@ def process_csv(filename):
             try:
                 url = row[0]
             except:
-                print("\033[91mFailed to fetch type for", row, "\033[30m")
+                print("\033[91m" + "Failed to fetch type for", row + "\033[30m")
                 type_category = "unsure"
                 url = ""
 
             # Add missing elements of the URL
-            if "www." not in url[:15] and "http" not in url[:15]:
+            if ("www." not in url[:15] and "http" not in url[:15] and url != ""):
                 url = "www." + url
 
-            if ("http" not in url):
+            if ("http" not in url and url != ""):
                 url = "https://" + url
             
             try:
                 type_category = row[1]
             except:
-                print("\033[91mFailed to fetch type for", url, "|", row, "\033[30m")
+                print("\033[91m" + "Failed to fetch type for", url, "|", row + "\033[30m")
                 type_category = "unsure"
             
             print("[CONNECTION] Fetching", url, "...")
