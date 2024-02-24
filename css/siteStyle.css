@@ -172,11 +172,3 @@ figure img{
 .HomePage p{
     width: 80%
 }
-
-.valueProp{
-    display: flex;
-    flex-wrap: wrap;
-}
-.valueColumn{
-
-}
