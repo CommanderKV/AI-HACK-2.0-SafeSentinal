@@ -1,11 +1,13 @@
 import csv
 import requests
 import concurrent.futures
+from requests.adapters import HTTPAdapter
+
 
 def fetch_website_content(url):
     def run(url):
         try:
-            response = requests.get(url)
+            response = requests.get(url, timeout=3)
         except Exception as e:
             print("[ERROR]", e)
             return None
