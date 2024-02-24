@@ -137,6 +137,8 @@ figure img{
 
 .valueProp{
     display: flex;
-    flex-direction: column;
-    column-count: 2;
+    flex-wrap: wrap;
+}
+.valueColumn{
+
 }
