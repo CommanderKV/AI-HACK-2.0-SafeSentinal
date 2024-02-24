@@ -5,7 +5,12 @@ import concurrent.futures
 
 def fetch_website_content(url):
     def run(url):
-        response = requests.get(url)
+        try:
+            response = requests.get(url)
+        except Exception as e:
+            print("[ERROR]", e)
+            return None
+        
         if response.status_code == 200:
             return response.text
         else:
@@ -16,7 +21,7 @@ def fetch_website_content(url):
         try:
             result = future.result(timeout=10)
         except:
-            print("[TIMEOUT]Failed to fetch", url, "within 10 seconds.")
+            print("[TIMEOUT] Failed to fetch", url, "within 10 seconds.")
             result = None
 
         return result
