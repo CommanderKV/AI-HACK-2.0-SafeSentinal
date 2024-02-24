@@ -12,7 +12,10 @@ h1{
 h2{
     font-size: 2em;
 }
-
+header{
+    background-color: #3A015C;
+    display:flex;
+}
 header ul{
     display:flex;
     padding: 0px;
