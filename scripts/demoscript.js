@@ -1,3 +1,4 @@
+
 // Define sets for good and bad websites
 const goodWebsites = new Set([
     'example.com',
