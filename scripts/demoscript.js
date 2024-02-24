@@ -30,10 +30,10 @@ const allLinks = document.querySelectorAll('a');
 allLinks.forEach(link => {
     if(checkContainsWebsite(link.href, siteWebsite)){
         //link.style.color = 'white';
-        link.addEventListener('mouseover', () => {
+        /*link.addEventListener('mouseover', () => {
             // Change the button's background color
             link.style.backgroundColor = 'blue';
-        });
+        });*/
     }
     else if (checkContainsWebsite(link.href, goodWebsites)) {
         link.style.color = 'green';
