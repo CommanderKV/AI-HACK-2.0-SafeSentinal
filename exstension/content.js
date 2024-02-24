@@ -18,24 +18,21 @@ for (var i = 0; i < a.length; i++) {
 
 
 // Communicating with Python backend
-async function getData() {
-	response = await fetch(
-		'https://lamp.computerstudi.es/~Kyler1220041/hackathon/interface.php', 
-		{
-			method: 'POST',
-			mode: "no-cors",
-			body: new URLSearchParams({
-				"links": JSON.stringify(links)
-			}),
-			headers: {
-				'Content-Type': 'text/plain'
-			}
+fetch(
+	'https://lamp.computerstudi.es/~Kyler1220041/hackathon/interface.php', 
+	{
+		method: 'POST',
+		body: new URLSearchParams({
+			"links": JSON.stringify(links)
+		}),
+		headers: {
+			'Content-Type': 'text/plain'
 		}
-	);
-	const data = await response.json();
-	return data;
-}
-	
-let data = getData();
-console.log(data);
-
+	}
+).then(response => {
+	return response
+}).then((data) => {
+	console.log(data, "END")
+}).catch((error) => {
+	console.log(error)
+});
