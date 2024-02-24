@@ -12,9 +12,9 @@ h1{
     margin:0;
 }
 h2{
-    font-size: 1em;
+    font-size: 1.6em;
     padding:0;
-    margin:2%;
+    margin:10px;
 }
 /*
 header{
@@ -178,4 +178,24 @@ figure img{
 .DemoPageDiv a{
     font-weight: bold;
     text-decoration-line: underline;
+}
+
+#callToAction a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+#callToAction img{
+
+    background-color: #13A18F;
+    border-radius: 15px;
+    transition: all .25s ease ;
+    width: 50%;
+    height: auto;
+}
+#callToAction img:hover{
+    background-color: #06D6A0;
 }
