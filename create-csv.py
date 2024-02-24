@@ -48,6 +48,7 @@ def write_to_csv(data, filename):
 
 def process_csv(filename):
     website_content = []
+    working = []
     counter = 0
 
     with open(filename, 'r') as file:
@@ -55,7 +56,7 @@ def process_csv(filename):
         next(reader)  # Skip header row
         for row in reader:
             if (counter >= 200):
-                break;
+                break
             url = row[0]
 
             # Add missing elements of the URL
@@ -85,17 +86,15 @@ def process_csv(filename):
             threat = classify_website(url, type_category)
             if content and threat != -1:
                 website_content.append((url, content, threat))
+                working.append(row)
                 print("[ADDED]", url, "to the dataset.")
                 counter += 1
             
             else:
                 print("[REMOVING]", url, "from the dataset.")
-                with open("malicious_phish.csv", 'r',) as f:
-                    readCSV = csv.reader(f, delimiter=',')
-                    lines = list(readCSV)
-                
-                lines.index(row)
-
+                with open("malicious_phish.csv", 'r') as f:
+                    lines = f.readlines()
+                    lines = [line for line in lines]
                 with open("malicious_phish.csv", 'w', newline='') as f:
                     writer = csv.writer(f)
                     writer.writerows(lines)
