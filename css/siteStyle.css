@@ -89,9 +89,6 @@ footer a{
 main{
     margin:2%;
 }
-main a{
-    color:khaki;
-}
 .AboutPageDiv{
     align-items:center;
     justify-content: center;
@@ -136,4 +133,10 @@ figure img{
 }
 .HomePage p{
     width: 80%
+}
+
+.valueProp{
+    display: flex;
+    flex-direction: column;
+    column-count: 2;
 }

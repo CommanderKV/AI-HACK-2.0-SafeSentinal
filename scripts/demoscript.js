@@ -31,6 +31,9 @@ allLinks.forEach(link => {
     } else if (checkContainsWebsite(link.href, badWebsites)) {
         link.style.color = 'red';
     }
+    else{
+        link.style.color = 'khaki;';
+    }
 });
 
 // Function to handle link click event
