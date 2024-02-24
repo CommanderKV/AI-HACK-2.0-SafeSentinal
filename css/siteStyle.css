@@ -17,7 +17,7 @@ h2{
 }
 
 header{
-    background-color: #3A015C;
+    background-color: #544578;
     display:flex;
     padding:10px;
     align-items:flex-end;
@@ -55,7 +55,7 @@ a:hover{
     padding:2%
 }
 footer{
-    background-color:#3A015C;
+    background-color:#544578;
     color:white;
     display:flex;
     width:100%;
