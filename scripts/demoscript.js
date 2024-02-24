@@ -29,7 +29,11 @@ const allLinks = document.querySelectorAll('a');
 // Iterate through each link and apply color based on good or bad website
 allLinks.forEach(link => {
     if(checkContainsWebsite(link.href, siteWebsite)){
-        link.style.color = 'white';
+        //link.style.color = 'white';
+        link.addEventListener('mouseover', () => {
+            // Change the button's background color
+            link.style.backgroundColor = 'blue';
+        });
     }
     else if (checkContainsWebsite(link.href, goodWebsites)) {
         link.style.color = 'green';
@@ -50,7 +54,10 @@ function handleLinkClick(event) {
     }
     else if (checkContainsWebsite(link.href, badWebsites)) {
         confirmed = window.confirm('This website is potentially malicious. We DO NOT recoment you visiting this website: ' + link.href );
-    }else{
+    }else if(checkContainsWebsite(link.href, siteWebsite)){
+        confirmed=true;
+    }
+    else{
         confirmed = window.confirm('This website is not in our list. Are you sure you want to visit ' + link.href + '?');
     }
 
