@@ -63,7 +63,12 @@ def process_csv(filename):
             lines.append(row)
             if (counter >= 10000):
                 break
-            url = row[0]
+            try:
+                url = row[0]
+            except:
+                print("\033[91mFailed to fetch type for", row, "\033[30m")
+                type_category = "unsure"
+                url = ""
 
             # Add missing elements of the URL
             if "www." not in url[:15] and "http" not in url[:15]:
@@ -75,7 +80,7 @@ def process_csv(filename):
             try:
                 type_category = row[1]
             except:
-                print("Failed to fetch type for", url, "|", row)
+                print("\033[91mFailed to fetch type for", url, "|", row, "\033[30m")
                 type_category = "unsure"
             
             print("[CONNECTION] Fetching", url, "...")
@@ -89,7 +94,7 @@ def process_csv(filename):
                     url = url.replace("https", "http")
                     content = fetch_website_content(url)
                 except:
-                    print("\033[91m[NOTICE] Failed to fetch", url, "\033[30m")
+                    print("[NOTICE] Failed to fetch", url)
                     content = None
 
             # Classify the website
