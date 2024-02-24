@@ -125,11 +125,3 @@ figure img{
     height: auto;
 }
 
-#Demo{
-    border-color: black;
-    border-radius: 15px;
-    border-style: solid;
-    padding: 10px;
-    width: 25%;
-    text-align: center;
-}
