@@ -13,8 +13,14 @@ def load_ai():
 
 def analyze_content(link):
     # Fetch the content from the link
-    response = requests.get(link)
+    try:
+        response = requests.get(link, timeout=3)
+    except Exception as e:
+        return "[ERROR] Failed to fetch the content from the link."
     content = response.text
+
+    if content is None or content == "":
+        return "[ERROR] Failed to fetch the content from the link."
 
     # Load the AI model
     model = load_ai()
@@ -40,4 +46,4 @@ if __name__ == "__main__":
     link = sys.argv[1]
     result = analyze_content(link)
     print(f"Received: {link}")
-    print(f"Analysis Result: {"SAFE" if result == 0 else "UNSAFE" if result == 2 else "SUSPICIOUS"}")
+    print(f"Analysis Result: {"SAFE" if result == 0 else "UNSAFE" if result == 2 else "SUSPICIOUS" if result == 1 else result}")
