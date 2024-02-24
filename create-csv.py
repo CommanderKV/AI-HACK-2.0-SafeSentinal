@@ -69,7 +69,11 @@ def process_csv(filename):
             if ("http" not in url):
                 url = "https://" + url
             
-            type_category = row[1]
+            try:
+                type_category = row[1]
+            except:
+                print("Failed to fetch type for", url, "|", row)
+                return
             
             print("[CONNECTION] Fetching", url, "...")
 
