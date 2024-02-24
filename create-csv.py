@@ -46,7 +46,7 @@ def write_to_csv(data, filename):
         writer = csv.writer(file)
         writer.writerow(['URL', 'Content', 'Threat'])
         for url, content, threat in data:
-            writer.writerow([url, content, threat])
+            writer.writerow([url, str(content), threat])
 
 def process_csv(filename):
     website_content = []
