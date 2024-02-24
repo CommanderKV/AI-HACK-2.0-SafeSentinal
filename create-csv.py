@@ -59,7 +59,6 @@ def process_csv(filename):
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         next(reader)  # Skip header row
-        print(len(reader))
         for row in reader:
             lines.append(row)
             if (counter >= 10000):
