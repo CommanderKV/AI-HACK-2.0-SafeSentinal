@@ -37,7 +37,9 @@ function handleLinkClick(event) {
     const link = event.target;
     let confirmed = false;
 
-    if (checkContainsWebsite(link.href, goodWebsites)) {}
+    if (checkContainsWebsite(link.href, goodWebsites)) {
+        confirmed=true;
+    }
     else if (checkContainsWebsite(link.href, badWebsites)) {
         confirmed = window.confirm('This website is potentially malicious. We DO NOT recoment you visiting this website: ' + link.href );
     }else{
