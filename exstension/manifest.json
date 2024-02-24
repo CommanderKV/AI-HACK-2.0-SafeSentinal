@@ -4,7 +4,8 @@
   "version": "1.0",
   "description": "Description of my extension",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "lamp.computerstudi.es/~Kyler1220041/hackathon/interface.php"
   ],
   "content_scripts": [
     {
