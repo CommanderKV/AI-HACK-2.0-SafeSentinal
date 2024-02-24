@@ -133,7 +133,7 @@ main{
     display:flex;
     flex-direction:column;
     padding:2%;
-    text-align: center;
+    text-align: justify;
     font-size: 1.5em
 }
 
@@ -148,7 +148,7 @@ main{
     display:flex;
     flex-direction:column;
     padding:2%;
-    text-align: center;
+    text-align: justify;
     font-size: 1.5em
 }
 .DemoPageDiv p{
@@ -166,7 +166,7 @@ figure img{
     display:flex;
     flex-direction:column;
     padding:2%;
-    text-align: center;
+    text-align: justify;
     font-size: 1.5em
 
 }
