@@ -103,12 +103,6 @@ def process_csv(filename):
                 website_content.append((url, content, threat))
                 print("[ADDED]", url, "to the dataset.")
                 counter += 1
-            
-            else:
-                print("[REMOVING]", url, "from the dataset.")
-                with open("malicious_phish.csv", 'w', newline='') as f:
-                    writer = csv.writer(f)
-                    writer.writerows(lines)
 
                 
     return website_content
