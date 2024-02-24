@@ -54,7 +54,13 @@ a:hover{
     flex-direction:column;
     padding:2%
 }
-
+footer{
+    background-color:#3A015C;
+    color:white;
+}
+footer a{
+    color: white;
+}
 .malicious, .malicious:hover{
     color:#ff0000;
 }
