@@ -125,13 +125,13 @@ figure img{
 #Demo{
     border-color: black;
     border-radius: 15px;
-    border-width: 3px;
+    border-style: solid;
     padding: 35px 35px;
-    background-image: url("img/Demo_Link_Background-image.jpg");
     transition: all 0.25s ease-in-out;
-    backdrop-filter: grayscale(100%);
+    filter: grayscale(100%);
     color: white;
+    text-align: center;
 }
 #Demo:hover{
-    backdrop-filter: grayscale(0%);
+    filter: grayscale(0%);
 }
