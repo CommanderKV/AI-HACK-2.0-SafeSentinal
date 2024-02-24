@@ -19,9 +19,9 @@ def fetch_website_content(url):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future = executor.submit(run, url)
         try:
-            result = future.result(timeout=10)
+            result = future.result(timeout=3)
         except:
-            print("[TIMEOUT] Failed to fetch", url, "within 10 seconds.")
+            print("[TIMEOUT] Failed to fetch", url, "within 3 seconds.")
             result = None
 
         return result
@@ -63,8 +63,9 @@ def process_csv(filename):
             if ("http" not in url):
                 url = "https://" + url
             
-            
             type_category = row[1]
+            
+            print("[CONNECTION] Fetching", url, "...")
 
             # Try to get the website content
             try:
