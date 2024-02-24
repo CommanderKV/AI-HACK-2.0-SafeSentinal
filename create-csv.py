@@ -61,7 +61,7 @@ def process_csv(filename):
         next(reader)  # Skip header row
         for row in reader:
             lines.append(row)
-            if (counter >= 200):
+            if (counter >= 1000):
                 break
             url = row[0]
 
