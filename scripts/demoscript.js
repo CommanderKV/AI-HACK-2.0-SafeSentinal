@@ -2,7 +2,8 @@
 const goodWebsites = new Set([
     'example.com',
     'stackoverflow.com',
-    'google.com'
+    'google.com',
+    'commanderkv.github.io/AI-HACK-2.0-SafeSentinal/'
 ]);
 
 const badWebsites = new Set([
@@ -36,9 +37,8 @@ function handleLinkClick(event) {
     const link = event.target;
     let confirmed = false;
 
-    if (checkContainsWebsite(link.href, goodWebsites)) {
-        confirmed = window.confirm('This is a trusted website. Are you sure you want to visit ' + link.href + '?');
-    } else if (checkContainsWebsite(link.href, badWebsites)) {
+    if (checkContainsWebsite(link.href, goodWebsites)) {}
+    else if (checkContainsWebsite(link.href, badWebsites)) {
         confirmed = window.confirm('This website is potentially malicious. We DO NOT recoment you visiting this website: ' + link.href );
     }else{
         confirmed = window.confirm('This website is not in our list. Are you sure you want to visit ' + link.href + '?');
