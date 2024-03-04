@@ -9,7 +9,7 @@ from sklearn import datasets
 from joblib import dump
 
 # Load your labeled dataset (e.g., CSV file with "content" and "threat" columns)
-data = pd.read_csv("classified_websites.csv")
+data = pd.read_csv("../classified_websites.csv")
 
 # Filtering data
 dataIn = {

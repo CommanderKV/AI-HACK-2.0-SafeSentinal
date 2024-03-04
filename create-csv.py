@@ -9,7 +9,7 @@ def fetch_website_content(url):
         try:
             response = requests.get(url, timeout=3)
         except Exception as e:
-            print("[ERROR]", e)
+            print("\033[91m" + "[ERROR]", e, "\033[37m")
             return None
         
         if response.status_code == 200:
@@ -22,7 +22,7 @@ def fetch_website_content(url):
         try:
             result = future.result(timeout=3)
         except:
-            print("[TIMEOUT] Failed to fetch", url, "within 3 seconds.")
+            print("\033[91m" + "[TIMEOUT] Failed to fetch", url, "within 3 seconds." + "\033[37m")
             result = None
 
         return result
@@ -49,7 +49,7 @@ def write_to_csv(data, filename):
             try:
                 writer.writerow([url, str(content), threat])
             except:
-                print("Failed to write", url, "\n\n", content, "\n\n", threat, "to the dataset. Skipping...")
+                print("\033[91m" + "Failed to write", url, "\n\n", content, "\n\n", threat, "to the dataset. Skipping..." + "\033[37m")
 
 def process_csv(filename):
     website_content = []
@@ -59,17 +59,14 @@ def process_csv(filename):
     with open(filename, 'r') as file:
         reader = csv.reader(file)
         next(reader) 
-        rowCount = 0
         try: # Skip header row
             for row in reader:
-                rowCount += 1
                 lines.append(row)
-                if (counter >= 10000):
-                    break
+
                 try:
                     url = row[0]
                 except:
-                    print("\033[91m" + "Failed to fetch type for", row + "\033[30m")
+                    print("\033[91m" + "Failed to fetch type for", row + "\033[37m")
                     type_category = "unsure"
                     url = ""
 
@@ -83,7 +80,7 @@ def process_csv(filename):
                 try:
                     type_category = row[1]
                 except:
-                    print("\033[91m" + "Failed to fetch type for", url, "|", row + "\033[30m")
+                    print("\033[91m" + "Failed to fetch type for", url, "|", row + "\033[37m")
                     type_category = "unsure"
                 
                 print("[CONNECTION] Fetching", url, "...")
@@ -105,9 +102,9 @@ def process_csv(filename):
                 if content and threat != -1:
                     website_content.append((url, content, threat))
                     print("[ADDED]", url, "to the dataset.")
-                    counter += 1
+        
         except:
-            print("[FAILURE] Failed to go to next row on row", rowCount)
+            print("\033[91m" + "[FAILURE] Failed to go to next row on row", rowCount, "\033[37m")
             return website_content
 
                 
